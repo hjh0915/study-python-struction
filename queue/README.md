@@ -24,7 +24,7 @@ for name in namelist:
     simqueue.enqueue(name)
 ```
 >>> ['Bill', 'David', 'Susan', 'Jane', 'Kent', 'Brad']
-['Brad', 'Kent', 'Jane', 'Susan', 'David', 'Bill']
+>>> ['Brad', 'Kent', 'Jane', 'Susan', 'David', 'Bill']
 
 双端队列（deque）
 ==============
