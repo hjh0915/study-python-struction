@@ -36,6 +36,15 @@ class BinaryTree:
     def getRootVal(self):
         return self.key 
 
+    # def preorder(self):
+    #     """前序遍历"""
+
+    #     print(self.key)
+    #     if self.leftChild:
+    #         self.left.preorder()
+    #     if self.rightChild:
+    #         self.right.preorder()
+
 if __name__ == '__main__':
     r = BinaryTree('a')
     print(r.getRootVal())

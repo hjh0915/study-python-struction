@@ -31,3 +31,37 @@
 1、对于split()内置函数，是针对中间带有空格的字符串（即应该写成"( 13 + ( 40 * 5 ) )"），依据空格来切片   
 2、若是没有空格的话，那么在执行到eval(i)时，就会把结果计算出来，所以eval()函数有计算的功能   
 3、若是在1和3中间有空格的话，那么会报错（IndexError: ppop from empty list）
+
+树的遍历（二叉树）
+==============
+前序遍历
+-------
+``` py
+if tree:
+    print(tree.getRootVal())
+
+    preorder(tree.getLeftChild())
+    preorder(tree.getRightChild())
+```
+
+中序遍历
+-------
+``` py
+if tree != None:
+    inorder(tree.getLeftChild())
+
+    print(tree.getRootVal())
+    inorder(tree.getRightChild())
+```
+
+后序遍历
+-------
+``` py
+if tree != None:
+    postorder(tree.getLeftChild())
+    postorder(tree.getRightChild())
+    
+    print(tree.getRootVal())
+```
+
+#### 3个遍历函数的区别只有print语句位置不同
