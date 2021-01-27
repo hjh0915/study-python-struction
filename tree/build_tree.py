@@ -15,19 +15,29 @@ def buildParseTree(fpexp):
     currentTree = eTree
     for i in fplist:
         if i == '(':
+            print(i)
+
             currentTree.insertLeft('')
             pStack.push(currentTree)
             currentTree = currentTree.getLeftChild()
         elif i not in '+-*/)':
+            print(i)
+
             currentTree.setRootVal(eval(i))
+            print(eval(i)) # 会进行计算，若传入的是没有空格的字符串
+
             parent = pStack.pop()
             currentTree = parent 
         elif i in '+-*/':
+            print(i)
+
             currentTree.setRootVal(i)
             currentTree.insertRight('')
             pStack.push(currentTree)
             currentTree = currentTree.getRightChild()
         elif i == ')':
+            print(i)
+
             currentTree = pStack.pop()
         else:
             raise ValueError("不知名的构造器：" + i)
@@ -51,6 +61,6 @@ def evaluate(parseTree):
         return parseTree.getRootVal()
 
 if __name__ == '__main__':
-    x = "(13+(40*5))"
+    x = "( 13 + ( 40 * 5 ) )"
     t = buildParseTree(x)
     print(evaluate(t))
