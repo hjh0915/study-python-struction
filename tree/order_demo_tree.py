@@ -28,10 +28,10 @@ class Tree:
         # 将新值与父节点进行比较
         if self.data:  # 非空
             # 以35为例
-            if data >= 10:
-                f = data / 10               # 会得到一个小数->3.5
-                x = (str(f).split('.'))     # ['3', '5]
-                first_num = int(x[0])       # 3
+            if data >= 10 and self.data < 10:   # 需要满足要比的数字为两位数，并且被比的数字为各位数
+                f = data / 10                   # 会得到一个小数->3.5
+                x = (str(f).split('.'))         # ['3', '5]
+                first_num = int(x[0])           # 3
 
                 if first_num < self.data:      #新值小，放左边，小于等于
                     if self.left is None:       #若空，则插入数值
